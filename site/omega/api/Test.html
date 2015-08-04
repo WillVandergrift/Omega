@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready( function(){
+           callAuthenticateDevice();
+        });
+
+        function callAuthenticateDevice()
+        {
+            $.ajax({
+                url: 'http://omega.osage.k12.mo.us/api/authenticateDevice.php',
+                data: { appId: '6c2d95c6-6036-4cc6-bdef-a342885fdfba'},
+                type: 'post',
+                success: function( result )
+                {
+                    alert(result);
+                },
+                error: function ( xhr, errorType, exception )
+                {
+                    alert(xhr.statusText);
+                    alert(thrownError);
+                }
+            });
+        }
+
+    </script>
+</head>
+<body>
+    <p>test</p>
+</body>
+</html>
